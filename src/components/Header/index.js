@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Container } from "rbx";
+import { Navbar, Container, Column } from "rbx";
 import LogoImage from "../../assets/images/logo.png";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,9 @@ function Header() {
       <Navbar>
         <Container>
           <Navbar.Brand>
-            <img src={LogoImage} />
+            <Link to="/">
+              <img src={LogoImage} />
+            </Link>
             <Navbar.Burger
               className="navbar-burger burger"
               aria-label="menu"
@@ -28,7 +31,24 @@ function Header() {
               className="navbar-item navbar-end"
               align="right"
             >
-              Item 1
+              <Column.Group>
+                <Column>
+                  <Link
+                    to="/register"
+                    className="button is-white has-text-custom-purple"
+                  >
+                    Register
+                  </Link>
+                </Column>
+                <Column>
+                  <Link
+                    to="/login"
+                    className="button is-outlined is-custom-purple"
+                  >
+                    Login
+                  </Link>
+                </Column>
+              </Column.Group>
             </Navbar.Segment>
           </Navbar.Menu>
         </Container>

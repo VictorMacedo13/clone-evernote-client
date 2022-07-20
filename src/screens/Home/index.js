@@ -1,8 +1,9 @@
 import React from "react";
 import PresentationImage from "../../assets/images/presentation.png";
-import Header from "./../../components/Header/index";
+import Header from "../../components/Header/index";
 import { Section, Container, Column, Title } from "rbx";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 function HomeScreen() {
   return (
@@ -23,12 +24,15 @@ function HomeScreen() {
                 Lorem ipsum, or lipsum as it is sometimes known, is dummy text
                 used in laying out print.
               </Title>
-              <a className="button is-outlined is-white is-large">
+              <Link
+                to="/register"
+                className="button is-outlined is-white is-large"
+              >
                 <strong>Register for free Now</strong>
-              </a>
+              </Link>
             </Column>
             <Column size={6} offset={1}>
-              <img src={PresentationImage} />
+              <img src={PresentationImage} alt="" />
             </Column>
           </Column.Group>
         </Container>
